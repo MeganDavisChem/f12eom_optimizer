@@ -1,0 +1,49 @@
+
+ Primary working directories    : /scratch/mdavis/molpro_step_2022-08-17_10_16_57/molpro.RlZxA1Uak3
+ Secondary working directories  : /scratch/mdavis/molpro_step_2022-08-17_10_16_57/molpro.RlZxA1Uak3
+ Wavefunction directory         : /home/mdavis/f12eom_optimizer/f12eom_optimizer/./
+ Main file repository           : /scratch/mdavis/molpro_step_2022-08-17_10_16_57/molpro.RlZxA1Uak3/
+
+ id        : olemiss
+
+ Nodes     nprocs
+ node2        1
+
+ Using customized tuning parameters: mindgm=1; mindgv=20; mindgc=4; mindgr=1; noblas=0; minvec=7
+ default implementation of scratch files=df  
+
+
+ Variables initialized (945), CPU time= 0.01 sec
+ ***,H2CO_b1 CCSD(T)-F12 sto-3g
+     memory, 2000.0, m;
+     gthresh,energy=1.d-12,zero=1.d-22,oneint=1.d-22,twoint=1.d-22;
+     gthresh,optgrad=1.d-8,optstep=1.d-8;
+     nocompress;
+     bohr;
+     geometry={
+  N 0.0049918503 0.0100000000 -0.0729517864
+  H 0.9372476947 0.0000000000 0.3147300629
+  H -0.4685672217 0.8117053137 0.3147763094
+  H -0.4685672217 -0.8117053137 0.3147763094
+          }
+ 
+     set,charge=0
+     set,spin=0
+     basis=sto-3g
+                                                                                 !basis=aug-cc-pvtz
+     hf,maxit=500;wf,charge=0,spin=0;accu,20;
+     ee(1)=energy(1)
+                                                                           !ccsd,maxit=250;wf,charge=0,spin=0;orbital,IGNORE_ERROR;
+                                                                                 !;
+                                                                                 !e(1)=energy(2)-energy(1)
+                                                                                 !basis=cc-pvtz-f12
+                                                                                 !hf,maxit=500;wf,charge=0,spin=0;accu,20;
+                                                                    !ccsd(t)-f12,maxit=250;wf,charge=0,spin=0;orbital,IGNORE_ERROR;
+                                                                                 !ebase(1)=energy(2)
+                                                                                 !ee(1)=e(1)+ebase(1)
+     SHOW[f18.12],ee(1)}
+
+ UNMATCHED }
+
+
+ GLOBAL ERROR fehler on processor   0                                         

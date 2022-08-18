@@ -1,0 +1,28 @@
+export: Command not found.
+export: Command not found.
+export: Command not found.
+export: Command not found.
+Badly placed ()'s.
+ 
+Running threaded PSI4 on node14 
+/home/mdavis/anaconda3/envs/p4env/bin/psi4
+ 
+Working and scratch directories
+/home/mdavis/f12eom_optimizer/tests/slurm
+/scratch/mdavis/PSI4_2022-08-17_10:04:46.351493223
+ 
+use -n:  to specify number of threads
+use -i:  to specify input  file     (default = input.dat)
+use -o:  to specify output file     (default = file.out )
+ 
+-h or --help for more options
+ 
+Running...
+Traceback (most recent call last):
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 100, in <module>
+    run_molpro()
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 26, in run_molpro
+    memory, {mem}, m;
+NameError: name 'mem' is not defined
+...Done
+ 

@@ -1,0 +1,58 @@
+export: Command not found.
+export: Command not found.
+export: Command not found.
+export: Command not found.
+Badly placed ()'s.
+ 
+Running threaded PSI4 on node18 
+/home/mdavis/anaconda3/envs/p4env/bin/psi4
+ 
+Working and scratch directories
+/home/mdavis/f12eom_optimizer/tests/slurm
+/scratch/mdavis/PSI4_2022-08-18_12:45:26.710302539
+ 
+use -n:  to specify number of threads
+use -i:  to specify input  file     (default = input.dat)
+use -o:  to specify output file     (default = file.out )
+ 
+-h or --help for more options
+ 
+Running...
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+Traceback (most recent call last):
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 288, in <module>
+    main()
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 223, in main
+    psi_gradient, psi_energy = real_run_psi4(molsys_obj)
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 141, in real_run_psi4
+    gradient = np.subtract(eom_gradient, ccsd_gradient)
+ValueError: operands could not be broadcast together with shapes (3,3) (9,) 
+...Done
+ 

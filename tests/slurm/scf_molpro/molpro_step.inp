@@ -1,0 +1,22 @@
+*** part of geometry opt run
+memory, 2000.0, m;
+gthresh,energy=1.d-12,zero=1.d-22,oneint=1.d-22,twoint=1.d-22;
+gthresh,optgrad=1.d-8,optstep=1.d-8;
+nocompress;
+bohr;
+geometry={
+     3
+     	Fragment 1
+	    H  -1.6091287791   1.6776912926   0.0000000000
+	    C   0.4996407260   1.1375196076   0.0000000000
+	    F   0.2308407877  -1.4949310503   0.0000000000
+
+
+     }
+
+set,charge=0
+set,spin=0
+basis=vdz-f12
+hf,maxit=500;wf,charge=0,spin=0;accu,20;
+ee(1)=energy(2)
+optg

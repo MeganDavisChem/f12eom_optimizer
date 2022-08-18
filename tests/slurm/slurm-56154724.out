@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/qc/psi4conda/lib/python2.7/site-packages/psi4/__init__.py", line 55, in <module>
+    from . import core
+ImportError: /home/qc/psi4conda/lib/python2.7/site-packages/psi4/core.so: undefined symbol: PyUnicodeUCS4_AsUTF8String
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 2, in <module>
+    import psi4
+  File "/home/qc/psi4conda/lib/python2.7/site-packages/psi4/__init__.py", line 60, in <module>
+    raise ImportError("{0}".format(err))
+ImportError: /home/qc/psi4conda/lib/python2.7/site-packages/psi4/core.so: undefined symbol: PyUnicodeUCS4_AsUTF8String

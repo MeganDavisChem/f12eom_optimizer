@@ -1,0 +1,67 @@
+export: Command not found.
+export: Command not found.
+export: Command not found.
+export: Command not found.
+Badly placed ()'s.
+ 
+Running threaded PSI4 on node8 
+/home/mdavis/anaconda3/envs/p4env/bin/psi4
+ 
+Working and scratch directories
+/home/mdavis/f12eom_optimizer/tests/slurm
+/scratch/mdavis/PSI4_2022-08-16_14:46:44.782061569
+ 
+use -n:  to specify number of threads
+use -i:  to specify input  file     (default = input.dat)
+use -o:  to specify output file     (default = file.out )
+ 
+-h or --help for more options
+ 
+Running...
+/home/mdavis/anaconda3/envs/p4env/lib//python3.10/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.23.1
+  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
+Traceback (most recent call last):
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/qcelemental/molparse/from_string.py", line 242, in from_string
+    molstr, molinit = parse_as_xyz_ish(molstr, strict=True)
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/qcelemental/molparse/from_string.py", line 189, in parse_as_xyz_ish
+    raise MoleculeFormatError(f"""Unprocessable Molecule remnants under {dtype}:\n{molstr}""")
+qcelemental.exceptions.MoleculeFormatError: Unprocessable Molecule remnants under [psi4, xyz, xyz+, psi4+]:
+Fragment 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/qcelemental/molparse/from_string.py", line 249, in from_string
+    molstr, molinit = parse_as_xyz_ish(molstr, strict=False)
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/qcelemental/molparse/from_string.py", line 189, in parse_as_xyz_ish
+    raise MoleculeFormatError(f"""Unprocessable Molecule remnants under {dtype}:\n{molstr}""")
+qcelemental.exceptions.MoleculeFormatError: Unprocessable Molecule remnants under [psi4, xyz, xyz+, psi4+]:
+Fragment 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/qcelemental/molparse/from_string.py", line 256, in from_string
+    molstr, molinit = parse_as_psi4_ish(molstr, unsettled=True)
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/qcelemental/molparse/from_string.py", line 217, in parse_as_psi4_ish
+    raise MoleculeFormatError(f"""Unprocessable Molecule remnants under {dtype}:\n{molstr}""")
+qcelemental.exceptions.MoleculeFormatError: Unprocessable Molecule remnants under [psi4, xyz, xyz+, psi4+]:
+Fragment 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 36, in <module>
+    h2o = psi4.geometry(molsys_obj.show_geom())
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/molutil.py", line 259, in geometry
+    molrec = qcel.molparse.from_string(
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/qcelemental/molparse/from_string.py", line 262, in from_string
+    raise min_error
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/qcelemental/molparse/from_string.py", line 236, in from_string
+    molstr, molinit = parse_as_psi4_ish(molstr, unsettled=False)
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/qcelemental/molparse/from_string.py", line 217, in parse_as_psi4_ish
+    raise MoleculeFormatError(f"""Unprocessable Molecule remnants under {dtype}:\n{molstr}""")
+qcelemental.exceptions.MoleculeFormatError: Unprocessable Molecule remnants under [psi4, xyz, xyz+, psi4+]:
+Fragment 1
+...Done
+ 

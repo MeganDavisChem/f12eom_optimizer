@@ -1,0 +1,8 @@
+#!/bin/bash
+#SBATCH --job-name=test-job
+#SBATCH --ntasks=4
+#SBATCH --cpus-per-task=1
+#SBATCH --no-requeue
+#SBATCH --mem=9gb
+#SBATCH --nodelist=node20
+/home/qc/bin/molpro2020.sh 4 1 molpro_step.inp

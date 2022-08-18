@@ -1,0 +1,88 @@
+export: Command not found.
+export: Command not found.
+export: Command not found.
+export: Command not found.
+Badly placed ()'s.
+ 
+Running threaded PSI4 on node17 
+/home/mdavis/anaconda3/envs/p4env/bin/psi4
+ 
+Working and scratch directories
+/home/mdavis/f12eom_optimizer/tests/slurm
+/scratch/mdavis/PSI4_2022-08-17_15:14:34.484659318
+ 
+use -n:  to specify number of threads
+use -i:  to specify input  file     (default = input.dat)
+use -o:  to specify output file     (default = file.out )
+ 
+-h or --help for more options
+ 
+Running...
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+slurmstepd: error: *** JOB 58733079 ON node17 CANCELLED AT 2022-08-17T15:15:00 ***
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+libgdma.so         00007F092D9B410F  for__signal_handl     Unknown  Unknown
+libpthread-2.26.s  00007F094C375360  Unknown               Unknown  Unknown
+libc-2.26.so       00007F094C092A80  __open64              Unknown  Unknown
+libc-2.26.so       00007F094C024D13  _IO_file_open         Unknown  Unknown
+libc-2.26.so       00007F094C024EE2  _IO_file_fopen        Unknown  Unknown
+libc-2.26.so       00007F094C018794  Unknown               Unknown  Unknown
+core.cpython-310-  00007F0938B576AB  _ZN3psi11PSIOMana     Unknown  Unknown
+core.cpython-310-  00007F0938B5591F  _ZN3psi4PSIO5clos     Unknown  Unknown
+core.cpython-310-  00007F0938B55795  Unknown               Unknown  Unknown
+core.cpython-310-  00007F092E8DA85D  Unknown               Unknown  Unknown
+core.cpython-310-  00007F092E8D3C47  Unknown               Unknown  Unknown
+core.cpython-310-  00007F093A2B948E  Unknown               Unknown  Unknown
+core.cpython-310-  00007F093A336EED  Unknown               Unknown  Unknown
+core.cpython-310-  00007F093A33723B  Unknown               Unknown  Unknown
+core.cpython-310-  00007F0939F54A21  Unknown               Unknown  Unknown
+python3.10         00005586DD5AAFA4  Unknown               Unknown  Unknown
+python             00005586DD56D52E  _PyObject_MakeTpC     Unknown  Unknown
+python             00005586DD610D75  _PyEval_EvalFrame     Unknown  Unknown
+python3.10         00005586DD5BA742  Unknown               Unknown  Unknown
+python             00005586DD572E97  _PyObject_Call        Unknown  Unknown
+python             00005586DD60E774  _PyEval_EvalFrame     Unknown  Unknown
+python3.10         00005586DD5BA742  Unknown               Unknown  Unknown
+python             00005586DD572E97  _PyObject_Call        Unknown  Unknown
+python             00005586DD60E774  _PyEval_EvalFrame     Unknown  Unknown
+python3.10         00005586DD5BA742  Unknown               Unknown  Unknown
+python             00005586DD572E97  _PyObject_Call        Unknown  Unknown
+python             00005586DD60E774  _PyEval_EvalFrame     Unknown  Unknown
+python3.10         00005586DD5BA742  Unknown               Unknown  Unknown
+python3.10         00005586DD5300B5  Unknown               Unknown  Unknown
+python3.10         00005586DD5BA742  Unknown               Unknown  Unknown
+python3.10         00005586DD5300B5  Unknown               Unknown  Unknown
+python3.10         00005586DD5BA742  Unknown               Unknown  Unknown
+python3.10         00005586DD52F9F3  Unknown               Unknown  Unknown
+python3.10         00005586DD5BA742  Unknown               Unknown  Unknown
+python3.10         00005586DD5300B5  Unknown               Unknown  Unknown
+python3.10         00005586DD5BA742  Unknown               Unknown  Unknown
+python3.10         00005586DD5BAC9B  Unknown               Unknown  Unknown
+python3.10         00005586DD5300B5  Unknown               Unknown  Unknown
+python3.10         00005586DD5BA742  Unknown               Unknown  Unknown
+python3.10         00005586DD52F9F3  Unknown               Unknown  Unknown
+python3.10         00005586DD5BA742  Unknown               Unknown  Unknown
+python3.10         00005586DD5300B5  Unknown               Unknown  Unknown
+python3.10         00005586DD5BA742  Unknown               Unknown  Unknown
+python3.10         00005586DD52F425  Unknown               Unknown  Unknown
+python3.10         00005586DD5BA742  Unknown               Unknown  Unknown
+python3.10         00005586DD52F425  Unknown               Unknown  Unknown
+python3.10         00005586DD5BA742  Unknown               Unknown  Unknown
+python             00005586DD5C9578  PyEval_EvalCode       Unknown  Unknown
+python3.10         00005586DD67F8FB  Unknown               Unknown  Unknown
+python3.10         00005586DD6B83A5  Unknown               Unknown  Unknown
+python3.10         00005586DD6BC1D0  Unknown               Unknown  Unknown
+python             00005586DD6BC3B8  _PyRun_SimpleFile     Unknown  Unknown
+python             00005586DD6BC4C4  _PyRun_AnyFileObj     Unknown  Unknown
+python             00005586DD6BD5BD  Py_RunMain            Unknown  Unknown
+python             00005586DD6BD7D9  Py_BytesMain          Unknown  Unknown
+libc-2.26.so       00007F094BFC9F8A  __libc_start_main     Unknown  Unknown
+python3.10         00005586DD63D5D4  Unknown               Unknown  Unknown

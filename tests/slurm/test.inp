@@ -1,0 +1,16 @@
+memory,1125,m
+gthresh,energy=1.d-10,zero=1.d-16,oneint=1.d-16,twoint=1.d-16;
+gthresh,optgrad=1.d-8,optstep=1.d-8;
+nocompress
+geomtyp=xyz
+angstrom
+geometry={
+N 0.0049918503 0.0100000000 -0.0729517864
+H 0.9372476947 0.0000000000 0.3147300629
+H -0.4685672217 0.8117053137 0.3147763094
+H -0.4685672217 -0.8117053137 0.3147763094
+}
+set,charge=0
+set,spin=0
+basis=avdz
+{hf,maxit=500;accu,20;}

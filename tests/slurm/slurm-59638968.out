@@ -1,0 +1,30 @@
+export: Command not found.
+export: Command not found.
+export: Command not found.
+export: Command not found.
+Badly placed ()'s.
+ 
+Running threaded PSI4 on node18 
+/home/mdavis/anaconda3/envs/p4env/bin/psi4
+ 
+Working and scratch directories
+/home/mdavis/f12eom_optimizer/tests/slurm
+/scratch/mdavis/PSI4_2022-08-18_11:54:49.667531012
+ 
+use -n:  to specify number of threads
+use -i:  to specify input  file     (default = input.dat)
+use -o:  to specify output file     (default = file.out )
+ 
+-h or --help for more options
+ 
+Running...
+slurmstepd: error: *** JOB 59638968 ON node18 CANCELLED AT 2022-08-18T11:55:32 ***
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+libgdma.so         00007FA929F5110F  for__signal_handl     Unknown  Unknown
+libpthread-2.26.s  00007FA948912360  Unknown               Unknown  Unknown
+libpthread-2.26.s  00007FA948911C45  waitpid               Unknown  Unknown
+python3.10         0000560B8F75949E  Unknown               Unknown  Unknown
+python3.10         0000560B8F660A61  Unknown               Unknown  Unknown
+
+Stack trace terminated abnormally.

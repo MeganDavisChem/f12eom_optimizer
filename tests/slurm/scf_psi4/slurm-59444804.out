@@ -1,0 +1,77 @@
+ 
+Running threaded PSI4 on node18 
+/home/qc//psi4conda/bin/psi4
+ 
+Working and scratch directories
+/home/mdavis/f12eom_optimizer/tests/slurm/scf_psi4
+/scratch/mdavis/PSI4_2022-08-18_10:08:47.260707412
+ 
+use -n:  to specify number of threads
+use -i:  to specify input  file     (default = input.dat)
+use -o:  to specify output file     (default = file.out )
+ 
+-h or --help for more options
+ 
+Running...
+psi4 -n 4 -i opt.com
+Performing finite difference calculations
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+ 7 displacements needed ... 1 2 3 4 5 6 7
+Traceback (most recent call last):
+  File "/home/qc//psi4conda/bin/psi4", line 269, in <module>
+    exec(content)
+  File "<string>", line 46, in <module>
+  File "/home/qc/psi4conda/lib//python2.7/site-packages/psi4/driver/driver.py", line 1238, in optimize
+    raise OptimizationConvergenceError("""geometry optimization""", n - 1, wfn)
+
+OptimizationConvergenceError: Could not converge geometry optimization in 50 iterations.
+...Done
+ 

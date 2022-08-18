@@ -1,0 +1,27 @@
+*** part of geometry opt run
+memory, 2000.0, m;
+gthresh,energy=1.d-12,zero=1.d-22,oneint=1.d-22,twoint=1.d-22;
+gthresh,optgrad=1.d-8,optstep=1.d-8;
+nocompress;
+bohr;
+geometry={
+     3
+     	Fragment 1
+	    H  -0.9675519511   1.0972411746   0.0000000000
+	    C   0.1020124118   0.7634892810   0.0000000000
+	    F  -0.0131077261  -0.5404506055   0.0000000000
+
+
+     }
+
+set,charge=0
+set,spin=0
+basis=vdz-f12
+hf,maxit=500;wf,charge=0,spin=0;accu,20;
+ccsd(t)-f12,maxit=250;wf,charge=0,spin=0;orbital,IGNORE_ERROR;
+ee(1)=energy(2)
+forces,varsav
+SHOW[f18.12],ee(1)
+SHOW[f18.12],GRADX
+SHOW[f18.12],GRADY
+SHOW[f18.12],GRADZ

@@ -1,0 +1,51 @@
+export: Command not found.
+export: Command not found.
+export: Command not found.
+export: Command not found.
+Badly placed ()'s.
+
+CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+To initialize your shell, run
+
+    $ conda init <SHELL_NAME>
+
+Currently supported shells are:
+  - bash
+  - fish
+  - tcsh
+  - xonsh
+  - zsh
+  - powershell
+
+See 'conda init --help' for more information and options.
+
+IMPORTANT: You may need to close and restart your shell after running 'conda init'.
+
+
+ 
+Running threaded PSI4 on node17 
+/home/mdavis/anaconda3/envs/p4env/bin/psi4
+ 
+Working and scratch directories
+/home/mdavis/f12eom_optimizer/tests/slurm
+/scratch/mdavis/PSI4_2022-08-16_14:14:24.192821954
+ 
+use -n:  to specify number of threads
+use -i:  to specify input  file     (default = input.dat)
+use -o:  to specify output file     (default = file.out )
+ 
+-h or --help for more options
+ 
+Running...
+Traceback (most recent call last):
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 18, in <module>
+    psi4.optimize(compute_psi4_gradient)
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/driver.py", line 1137, in optimize
+    name = driver_util.upgrade_interventions(name)
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/driver_util.py", line 107, in upgrade_interventions
+    raise e
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/driver_util.py", line 97, in upgrade_interventions
+    lowermethod = method.lower()
+AttributeError: 'function' object has no attribute 'lower'
+...Done
+ 

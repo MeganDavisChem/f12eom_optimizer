@@ -1,0 +1,50 @@
+export: Command not found.
+export: Command not found.
+export: Command not found.
+export: Command not found.
+Badly placed ()'s.
+ 
+Running threaded PSI4 on node17 
+/home/mdavis/anaconda3/envs/p4env/bin/psi4
+ 
+Working and scratch directories
+/home/mdavis/f12eom_optimizer/tests/slurm
+/scratch/mdavis/PSI4_2022-08-17_13:55:15.763196603
+ 
+use -n:  to specify number of threads
+use -i:  to specify input  file     (default = input.dat)
+use -o:  to specify output file     (default = file.out )
+ 
+-h or --help for more options
+ 
+Running...
+/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py:96: FutureWarning: Using `psi4.set_module_options(<module>, {<key>: <val>})` instead of `psi4.set_options({<module>__<key>: <val>})` is deprecated, and as soon as 1.5 it will stop working
+
+  psi4.set_module_options('scf', {'d_convergence': '13'})
+/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py:97: FutureWarning: Using `psi4.set_module_options(<module>, {<key>: <val>})` instead of `psi4.set_options({<module>__<key>: <val>})` is deprecated, and as soon as 1.5 it will stop working
+
+  psi4.set_module_options('ccenergy', {'r_convergence': '15'})
+/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py:98: FutureWarning: Using `psi4.set_module_options(<module>, {<key>: <val>})` instead of `psi4.set_options({<module>__<key>: <val>})` is deprecated, and as soon as 1.5 it will stop working
+
+  psi4.set_module_options('cceom', {'r_convergence': '8'})
+Traceback (most recent call last):
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 208, in <module>
+    main()
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 170, in main
+    psi_gradient, psi_energy = real_run_psi4(molsys_obj)
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 99, in real_run_psi4
+    gradient = psi4.gradient('eom-ccsd').np.flatten()
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/driver.py", line 619, in gradient
+    wfn = procedures['gradient'][lowername](lowername, molecule=molecule, **kwargs)
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/procrouting/proc.py", line 3472, in run_eom_cc_gradient
+    ref_wfn = run_eom_cc(name, **kwargs)
+  File "/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/procrouting/proc.py", line 3447, in run_eom_cc
+    core.cceom(ref_wfn)
+RuntimeError: 
+Fatal Error: Must provide roots_per_irrep vector in input.
+Error occurred in file: /scratch/psilocaluser/conda-builds/psi4-multiout_1657298395608/work/psi4/src/psi4/cc/cceom/get_eom_params.cc on line: 101
+The most recent 5 function calls were:
+
+
+...Done
+ 

@@ -1,0 +1,21 @@
+ 
+Running threaded PSI4 on node17 
+/home/qc//psi4conda/bin/psi4
+ 
+Working and scratch directories
+/home/mdavis/f12eom_optimizer/tests/slurm
+/scratch/mdavis/PSI4_2022-08-16_12:56:12.587533762
+ 
+use -n:  to specify number of threads
+use -i:  to specify input  file     (default = input.dat)
+use -o:  to specify output file     (default = file.out )
+ 
+-h or --help for more options
+ 
+Running...
+Traceback (most recent call last):
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 18, in <module>
+    psi4.optimize(opt_func=compute_psi4_gradient())
+TypeError: optimize() takes exactly 1 argument (0 given)
+...Done
+ 

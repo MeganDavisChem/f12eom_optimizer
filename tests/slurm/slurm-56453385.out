@@ -1,0 +1,32 @@
+export: Command not found.
+export: Command not found.
+export: Command not found.
+export: Command not found.
+Badly placed ()'s.
+ 
+Running threaded PSI4 on node2 
+/home/mdavis/anaconda3/envs/p4env/bin/psi4
+ 
+Working and scratch directories
+/home/mdavis/f12eom_optimizer/tests/slurm
+/scratch/mdavis/PSI4_2022-08-16_15:43:54.138744518
+ 
+use -n:  to specify number of threads
+use -i:  to specify input  file     (default = input.dat)
+use -o:  to specify output file     (default = file.out )
+ 
+-h or --help for more options
+ 
+Running...
+Traceback (most recent call last):
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 22, in <module>
+    optwrapper.initialize_options({"g_convergence": "1e-8"})
+  File "/home/mdavis/optking/optking/optwrapper.py", line 177, in initialize_options
+    op.Params = op.OptParams(userOptions)
+  File "/home/mdavis/optking/optking/optparams.py", line 180, in __init__
+    self.g_convergence = uod.get('G_CONVERGENCE', 'QCHEM')
+  File "/home/mdavis/optking/optking/optparams.py", line 26, in string_option_setter
+    raise OptError('Invalid value for ' + storage_name)
+optking.exceptions.OptError: Invalid value for g_convergence
+...Done
+ 

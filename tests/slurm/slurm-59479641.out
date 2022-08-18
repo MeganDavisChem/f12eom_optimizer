@@ -1,0 +1,30 @@
+export: Command not found.
+export: Command not found.
+export: Command not found.
+export: Command not found.
+Badly placed ()'s.
+ 
+Running threaded PSI4 on node18 
+/home/mdavis/anaconda3/envs/p4env/bin/psi4
+ 
+Working and scratch directories
+/home/mdavis/f12eom_optimizer/tests/slurm
+/scratch/mdavis/PSI4_2022-08-18_10:34:04.992468189
+ 
+use -n:  to specify number of threads
+use -i:  to specify input  file     (default = input.dat)
+use -o:  to specify output file     (default = file.out )
+ 
+-h or --help for more options
+ 
+Running...
+Traceback (most recent call last):
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 233, in <module>
+    main()
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 224, in main
+    history.oHistory.hessian_update(H, molsys_obj)
+  File "/home/mdavis/optking/optking/history.py", line 235, in hessian_update
+    dg[:] = f_old - f  # gradients -- not forces!
+ValueError: operands could not be broadcast together with shapes (3,) (6,) 
+...Done
+ 

@@ -1,0 +1,92 @@
+export: Command not found.
+export: Command not found.
+export: Command not found.
+export: Command not found.
+Badly placed ()'s.
+ 
+Running threaded PSI4 on node7 
+/home/mdavis/anaconda3/envs/p4env/bin/psi4
+ 
+Working and scratch directories
+/home/mdavis/f12eom_optimizer/tests/slurm
+/scratch/mdavis/PSI4_2022-08-18_12:38:48.631703521
+ 
+use -n:  to specify number of threads
+use -i:  to specify input  file     (default = input.dat)
+use -o:  to specify output file     (default = file.out )
+ 
+-h or --help for more options
+ 
+Running...
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+/home/mdavis/anaconda3/envs/p4env/lib/python3.10/site-packages/psi4/driver/task_base.py:161: FutureWarning: Using the `local_options` keyword argument is deprecated in favor of using `task_config`, in version 0.30.0 it will stop working.
+  self.result = qcng.compute(
+slurmstepd: error: *** JOB 59724738 ON node7 CANCELLED AT 2022-08-18T12:40:52 ***
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+libgdma.so         00007FEFC261910F  for__signal_handl     Unknown  Unknown
+libpthread-2.26.s  00007FEFE0FD92E0  Unknown               Unknown  Unknown
+libc-2.26.so       00007FEFE0C8736B  _IO_file_close        Unknown  Unknown
+libc-2.26.so       00007FEFE0C88A98  _IO_file_close_it     Unknown  Unknown
+libc-2.26.so       00007FEFE0C7BD97  fclose                Unknown  Unknown
+core.cpython-310-  00007FEFCD7BC848  _ZN3psi11PSIOMana     Unknown  Unknown
+core.cpython-310-  00007FEFCD7BD16E  _ZN3psi11PSIOMana     Unknown  Unknown
+core.cpython-310-  00007FEFCD7C8F36  _ZN3psi4PSIO4open     Unknown  Unknown
+core.cpython-310-  00007FEFC3BE01B8  Unknown               Unknown  Unknown
+core.cpython-310-  00007FEFCEF1E581  Unknown               Unknown  Unknown
+core.cpython-310-  00007FEFCEF9C31B  Unknown               Unknown  Unknown
+core.cpython-310-  00007FEFCEF9C52B  Unknown               Unknown  Unknown
+core.cpython-310-  00007FEFCEBB9A21  Unknown               Unknown  Unknown
+python3.10         0000555EF0E3CFA4  Unknown               Unknown  Unknown
+python             0000555EF0DFF52E  _PyObject_MakeTpC     Unknown  Unknown
+python             0000555EF0EA2D75  _PyEval_EvalFrame     Unknown  Unknown
+python3.10         0000555EF0E4C742  Unknown               Unknown  Unknown
+python             0000555EF0E04E97  _PyObject_Call        Unknown  Unknown
+python             0000555EF0EA0774  _PyEval_EvalFrame     Unknown  Unknown
+python3.10         0000555EF0E4C742  Unknown               Unknown  Unknown
+python             0000555EF0E04E97  _PyObject_Call        Unknown  Unknown
+python             0000555EF0EA0774  _PyEval_EvalFrame     Unknown  Unknown
+python3.10         0000555EF0E4C742  Unknown               Unknown  Unknown
+python             0000555EF0E04E97  _PyObject_Call        Unknown  Unknown
+python             0000555EF0EA0774  _PyEval_EvalFrame     Unknown  Unknown
+python3.10         0000555EF0E4C742  Unknown               Unknown  Unknown
+python3.10         0000555EF0DC20B5  Unknown               Unknown  Unknown
+python3.10         0000555EF0E4C742  Unknown               Unknown  Unknown
+python3.10         0000555EF0DC20B5  Unknown               Unknown  Unknown
+python3.10         0000555EF0E4C742  Unknown               Unknown  Unknown
+python3.10         0000555EF0DC19F3  Unknown               Unknown  Unknown
+python3.10         0000555EF0E4C742  Unknown               Unknown  Unknown
+python3.10         0000555EF0DC20B5  Unknown               Unknown  Unknown
+python3.10         0000555EF0E4C742  Unknown               Unknown  Unknown
+python3.10         0000555EF0E4CC9B  Unknown               Unknown  Unknown
+python3.10         0000555EF0DC20B5  Unknown               Unknown  Unknown
+python3.10         0000555EF0E4C742  Unknown               Unknown  Unknown
+python3.10         0000555EF0DC19F3  Unknown               Unknown  Unknown
+python3.10         0000555EF0E4C742  Unknown               Unknown  Unknown
+python3.10         0000555EF0DC20B5  Unknown               Unknown  Unknown
+python3.10         0000555EF0E4C742  Unknown               Unknown  Unknown
+python3.10         0000555EF0DC1425  Unknown               Unknown  Unknown
+python3.10         0000555EF0E4C742  Unknown               Unknown  Unknown
+python3.10         0000555EF0DC1425  Unknown               Unknown  Unknown
+python3.10         0000555EF0E4C742  Unknown               Unknown  Unknown
+python             0000555EF0E5B578  PyEval_EvalCode       Unknown  Unknown
+python3.10         0000555EF0F118FB  Unknown               Unknown  Unknown
+python3.10         0000555EF0F4A3A5  Unknown               Unknown  Unknown
+python3.10         0000555EF0F4E1D0  Unknown               Unknown  Unknown
+python             0000555EF0F4E3B8  _PyRun_SimpleFile     Unknown  Unknown
+python             0000555EF0F4E4C4  _PyRun_AnyFileObj     Unknown  Unknown
+python             0000555EF0F4F5BD  Py_RunMain            Unknown  Unknown
+python             0000555EF0F4F7D9  Py_BytesMain          Unknown  Unknown
+libc-2.26.so       00007FEFE0C2DF4A  __libc_start_main     Unknown  Unknown
+python3.10         0000555EF0ECF5D4  Unknown               Unknown  Unknown
