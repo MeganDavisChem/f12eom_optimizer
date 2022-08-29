@@ -7,9 +7,9 @@ ang;
 geometry={
      3
      	Fragment 1
-	    H  -0.7551191448   1.4335152691   0.0000000000
-	    C   0.1012775177   0.7664957372   0.0000000000
-	    F  -0.0325464289  -0.5419350171   0.0000000000
+	    H  -0.7632044750   1.4579219460   0.0000000000
+	    C   0.0986243160   0.7533057638   0.0000000000
+	    F  -0.0218078969  -0.5531517206   0.0000000000
 
 
      }
@@ -18,8 +18,8 @@ set,charge=0
 set,spin=0
 basis=vdz-f12
 hf,maxit=500;wf,charge=0,spin=0;accu,20;
-ccsd(t)-f12,maxit=250;wf,charge=0,spin=0;orbital,IGNORE_ERROR;
-ee(1)=energy(1)
+!ccsd(t)-f12,maxit=250;wf,charge=0,spin=0;orbital,IGNORE_ERROR;
+ee(1)=energy(2)
 forces,varsav
 SHOW[f18.12],ee(1)
 SHOW[f18.12],GRADX

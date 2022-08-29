@@ -1,0 +1,6 @@
+#!/bin/bash
+#SBATCH --job-name=test-job
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=8gb
+/home/qc/bin/molpro2020.sh 1 4 molpro_step.inp

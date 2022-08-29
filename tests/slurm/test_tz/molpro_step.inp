@@ -1,5 +1,5 @@
 *** part of geometry opt run
-memory, 2000.0, m;
+memory, 1950.0, m;
 gthresh,energy=1.d-12,zero=1.d-22,oneint=1.d-22,twoint=1.d-22;
 gthresh,optgrad=1.d-8,optstep=1.d-8;
 nocompress;
@@ -7,18 +7,18 @@ ang;
 geometry={
      3
      	Fragment 1
-	    H  -0.7632044750   1.4579219460   0.0000000000
-	    C   0.0986243160   0.7533057638   0.0000000000
-	    F  -0.0218078969  -0.5531517206   0.0000000000
+	    H  -0.7550992091   1.4318040610   0.0000000000
+	    C   0.1021687311   0.7662588837   0.0000000000
+	    F  -0.0334575780  -0.5399869555   0.0000000000
 
 
      }
 
 set,charge=0
 set,spin=0
-basis=vdz-f12
+basis=vtz-f12
 hf,maxit=500;wf,charge=0,spin=0;accu,20;
-!ccsd(t)-f12,maxit=250;wf,charge=0,spin=0;orbital,IGNORE_ERROR;
+ccsd(t)-f12,maxit=250;wf,charge=0,spin=0;orbital,IGNORE_ERROR;
 ee(1)=energy(2)
 forces,varsav
 SHOW[f18.12],ee(1)

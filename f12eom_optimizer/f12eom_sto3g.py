@@ -70,6 +70,8 @@ geometry={{
 
 set,charge={charge}
 set,spin={spin}
+basis=sto-3g
+hf,maxit=500;accu,20;
 basis={mol_basis}
 hf,maxit=500;accu,20;
 ccsd(t)-f12,maxit=250;{mol_core}orbital,IGNORE_ERROR;

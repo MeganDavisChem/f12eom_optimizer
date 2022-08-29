@@ -1,0 +1,23 @@
+ 
+Working directory   = /home/mdavis/f12eom_optimizer/tests/slurm/test_tz
+Scratch directory   = /scratch/mdavis/molpro_step_2022-08-19_10_23_57
+Input  file         = molpro_step.inp
+Output file         = molpro_step.out
+MolPro executable   = /home/qc/molpro_2020.1/bin/molpro
+ 
+Running MolPro on local host (node7)
+    with 4 processes
+    and  1 threads per process
+ 
+2:2:fehler on processor   2                                         :: 1
+(rank:2 hostname:node7 pid:161421):ARMCI DASSERT fail. src/common/armci.c:ARMCI_Error():208 cond:0
+3:3:fehler on processor   3                                         :: 1
+(rank:3 hostname:node7 pid:161422):ARMCI DASSERT fail. src/common/armci.c:ARMCI_Error():208 cond:0
+1:1:fehler on processor   1                                         :: 1
+(rank:1 hostname:node7 pid:161420):ARMCI DASSERT fail. src/common/armci.c:ARMCI_Error():208 cond:0
+Last System Error Message from Task 1:: Inappropriate ioctl for device
+application called MPI_Abort(comm=0x84000004, 1) - process 1
+Last System Error Message from Task 2:: Inappropriate ioctl for device
+application called MPI_Abort(comm=0x84000004, 1) - process 2
+Last System Error Message from Task 3:: Inappropriate ioctl for device
+application called MPI_Abort(comm=0x84000004, 1) - process 3

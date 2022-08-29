@@ -1,0 +1,498 @@
+[INFO]: 
+    			-----------------------------------------
+
+    			 OPTKING 3.0: for geometry optimizations 
+
+    			     By R.A. King, Bethel University     
+
+    			        with contributions from          
+
+    			    A.V. Copan, J. Cayton, A. Heide      
+
+    			-----------------------------------------
+
+    
+[INFO]: 	Generating molecular system for optimization from PSI4.
+[INFO]: 	1 fragments in PSI4 molecule object.
+[INFO]: 	Creating fragment 1 with 3 atoms
+[INFO]: 	Augmenting connectivity matrix to join fragments.
+[CRITICAL]: 1
+[WARNING]: This method should be adjusted after dimer fragments
+[INFO]: PLANNING FD:  dermode=(1, 0) keywords={'DERTYPE': 'NONE', 'FREEZE_CORE': 'TRUE', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}, 'SCF__E_CONVERGENCE': 1e-10, 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08} findif_kw={'findif_stencil_size': 3, 'findif_step_size': 0.005, 'findif_verbose': 1} kw={}
+[INFO]: 
+         ----------------------------------------------------------
+                                   FINDIF
+                     R. A. King and Jonathon Misiewicz
+         ----------------------------------------------------------
+
+
+[INFO]:   Using finite-differences of energies to determine gradients.
+    Generating geometries for use with 3-point formula.
+    Displacement size will be 5.00e-03.
+
+[INFO]:     Number of atoms is 3.
+    Number of symmetric SALCs is 3.
+    Translations projected? 1. Rotations projected? 1.
+
+[INFO]:     Number of geometries (including reference) is 7.
+
+[INFO]: <<< JSON launch ... cs 26.854389555552174
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.854389555552174
+[INFO]: Return energy(): -138.09529128169152
+[INFO]: <<< JSON launch ... cs 26.847621749079252
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.847621749079252
+[INFO]: Return energy(): -138.09548941324175
+[INFO]: <<< JSON launch ... cs 26.86117223495242
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.86117223495242
+[INFO]: Return energy(): -138.09508666621045
+[INFO]: <<< JSON launch ... cs 26.860944601017334
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.860944601017334
+[INFO]: Return energy(): -138.09545448837264
+[INFO]: <<< JSON launch ... cs 26.847840558718694
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.847840558718694
+[INFO]: Return energy(): -138.09512510444057
+[INFO]: <<< JSON launch ... cs 26.870094770686098
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.870094770686098
+[INFO]: Return energy(): -138.09525511307018
+[INFO]: <<< JSON launch ... cs 26.838708477696773
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.838708477696773
+[INFO]: Return energy(): -138.095325910242
+[INFO]:   Computing gradient from energies.
+    Using 3-point formula.
+    Energy without displacement: -138.0952912817
+    Check energies below for precision!
+    Forces are for mass-weighted, symmetry-adapted cartesians [a0].
+
+[INFO]: 
+     Coord      Energy(-1)        Energy(+1)            Force
+        0   -138.0954894132   -138.0950866662      0.0402747031
+        1   -138.0954544884   -138.0951251044      0.0329383932
+        2   -138.0952551131   -138.0953259102     -0.0070797172
+[INFO]: 
+         -------------------------------------------------------------
+
+[INFO]: PLANNING FD:  dermode=(1, 0) keywords={'DERTYPE': 'NONE', 'FREEZE_CORE': 'TRUE', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}, 'SCF__E_CONVERGENCE': 1e-10, 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08} findif_kw={'findif_stencil_size': 3, 'findif_step_size': 0.005, 'findif_verbose': 1} kw={}
+[INFO]: 
+         ----------------------------------------------------------
+                                   FINDIF
+                     R. A. King and Jonathon Misiewicz
+         ----------------------------------------------------------
+
+
+[INFO]:   Using finite-differences of energies to determine gradients.
+    Generating geometries for use with 3-point formula.
+    Displacement size will be 5.00e-03.
+
+[INFO]:     Number of atoms is 3.
+    Number of symmetric SALCs is 3.
+    Translations projected? 1. Rotations projected? 1.
+
+[INFO]:     Number of geometries (including reference) is 7.
+
+[INFO]: <<< JSON launch ... cs 26.854389555552174
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.854389555552174
+[INFO]: Return energy(): -138.0944338159064
+[INFO]: <<< JSON launch ... cs 26.847621749079252
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.847621749079252
+[INFO]: Return energy(): -138.0944068467526
+[INFO]: <<< JSON launch ... cs 26.86117223495242
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.86117223495242
+[INFO]: Return energy(): -138.09445463424046
+[INFO]: <<< JSON launch ... cs 26.860944601017334
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.860944601017334
+[INFO]: Return energy(): -138.0944729892961
+[INFO]: <<< JSON launch ... cs 26.847840558718694
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.847840558718694
+[INFO]: Return energy(): -138.0943910124758
+[INFO]: <<< JSON launch ... cs 26.870094770686098
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.870094770686098
+[INFO]: Return energy(): -138.09438650038126
+[INFO]: <<< JSON launch ... cs 26.838708477696773
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.838708477696773
+[INFO]: Return energy(): -138.0944793677905
+[INFO]:   Computing gradient from energies.
+    Using 3-point formula.
+    Energy without displacement: -138.0944338159
+    Check energies below for precision!
+    Forces are for mass-weighted, symmetry-adapted cartesians [a0].
+
+[INFO]: 
+     Coord      Energy(-1)        Energy(+1)            Force
+        0   -138.0944068468   -138.0944546342     -0.0047787488
+        1   -138.0944729893   -138.0943910125      0.0081976820
+        2   -138.0943865004   -138.0944793678     -0.0092867409
+[INFO]: 
+         -------------------------------------------------------------
+
+[WARNING]: This method is currently implemented as a last resort used as a last
+                       resort. Should be safe assuming no dimer coordinates, otherwise unknown.
+[INFO]: 	Taking RFO optimization step.
+[INFO]: 	Using RFO solution 1.
+[INFO]: 	Determining step-restricting scale parameter for RS-RFO.
+[INFO]: 
+	Maximum step size allowed    0.50000
+[INFO]: 
+
+	 Iter      |step|        alpha        rfo_root
+	------------------------------------------------
+	     1     0.06434       1.00000           1
+
+[INFO]: 	Norm of target step-size:    0.0643375326
+
+[INFO]: 	Projected energy change by RFO approximation        -0.00056
+
+[INFO]: 	Determining Cartesian step for fragment 1.
+[INFO]: 
+
+	---------------------------------------------------
+	 Iter        RMS(dx)        Max(dx)        RMS(dq) 
+	---------------------------------------------------
+	    1        2.2e-02        4.9e-02        5.4e-04
+	    2        2.4e-04        5.7e-04        1.1e-07
+	    3        7.9e-08        1.6e-07        5.0e-15
+	    4        2.2e-15        5.0e-15        2.6e-16
+	---------------------------------------------------
+
+[INFO]: 	Successfully converged to displaced geometry.
+[INFO]: 	Step for fragment succeeded.
+[INFO]: 
+
+	       --- Internal Coordinate Step in ANG or DEG, aJ/ANG or AJ/DEG ---
+	-----------------------------------------------------------------------------
+	         Coordinate      Previous         Force          Change          New 
+	         ----------      --------        ------          ------        ------
+	                  0       1.11321      -0.14071      -0.02792       1.08529
+	                  1       1.31200       0.01268       0.00127       1.31327
+	                  2     124.00206      -0.00045      -2.10560     121.89647
+	-----------------------------------------------------------------------------
+
+[INFO]: 	Norm of achieved step-size    0.0643375326
+[INFO]: Performing convergence check.
+[INFO]: 
+	==> Convergence Check <==
+        
+	Measures of convergence in internal coordinates in au.
+        
+	Criteria marked as inactive (o), active & met (*), and active & unmet ( ).
+        
+	--------------------------------------------------------------------------------------------- ~
+	  Step     Total Energy     Delta E     MAX Force     RMS Force      MAX Disp      RMS Disp    ~
+	--------------------------------------------------------------------------------------------- ~
+	  Convergence Criteria              o    2.00e-06 *    1.00e-06 *    6.00e-06 *    4.00e-06 *  ~
+	--------------------------------------------------------------------------------------------- ~
+	     1    -138.24536656   -1.38e+02 o    1.71e-02      1.05e-02      5.28e-02      3.71e-02    ~
+	---------------------------------------------------------------------------------------------
+
+
+[INFO]: PLANNING FD:  dermode=(1, 0) keywords={'DERTYPE': 'NONE', 'FREEZE_CORE': 'TRUE', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}, 'SCF__E_CONVERGENCE': 1e-10, 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08} findif_kw={'findif_stencil_size': 3, 'findif_step_size': 0.005, 'findif_verbose': 1} kw={}
+[INFO]: 
+         ----------------------------------------------------------
+                                   FINDIF
+                     R. A. King and Jonathon Misiewicz
+         ----------------------------------------------------------
+
+
+[INFO]:   Using finite-differences of energies to determine gradients.
+    Generating geometries for use with 3-point formula.
+    Displacement size will be 5.00e-03.
+
+[INFO]:     Number of atoms is 3.
+    Number of symmetric SALCs is 3.
+    Translations projected? 1. Rotations projected? 1.
+
+[INFO]:     Number of geometries (including reference) is 7.
+
+[INFO]: <<< JSON launch ... cs 26.9528992911221
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.9528992911221
+[INFO]: Return energy(): -138.09764920810554
+[INFO]: <<< JSON launch ... cs 26.94570129570782
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.94570129570782
+[INFO]: Return energy(): -138.09791097632325
+[INFO]: <<< JSON launch ... cs 26.96011469883138
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.96011469883138
+[INFO]: Return energy(): -138.0973797670336
+[INFO]: <<< JSON launch ... cs 26.959636868236707
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.959636868236707
+[INFO]: Return energy(): -138.09775327558455
+[INFO]: <<< JSON launch ... cs 26.94616707636773
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.94616707636773
+[INFO]: Return energy(): -138.09754186230109
+[INFO]: <<< JSON launch ... cs 26.96859137554915
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.96859137554915
+[INFO]: Return energy(): -138.09762479989826
+[INFO]: <<< JSON launch ... cs 26.937231185467194
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.937231185467194
+[INFO]: Return energy(): -138.09767207412256
+[INFO]:   Computing gradient from energies.
+    Using 3-point formula.
+    Energy without displacement: -138.0976492081
+    Check energies below for precision!
+    Forces are for mass-weighted, symmetry-adapted cartesians [a0].
+
+[INFO]: 
+     Coord      Energy(-1)        Energy(+1)            Force
+        0   -138.0979109763   -138.0973797670      0.0531209290
+        1   -138.0977532756   -138.0975418623      0.0211413283
+        2   -138.0976247999   -138.0976720741     -0.0047274224
+[INFO]: 
+         -------------------------------------------------------------
+
+[INFO]: PLANNING FD:  dermode=(1, 0) keywords={'DERTYPE': 'NONE', 'FREEZE_CORE': 'TRUE', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}, 'SCF__E_CONVERGENCE': 1e-10, 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08} findif_kw={'findif_stencil_size': 3, 'findif_step_size': 0.005, 'findif_verbose': 1} kw={}
+[INFO]: 
+         ----------------------------------------------------------
+                                   FINDIF
+                     R. A. King and Jonathon Misiewicz
+         ----------------------------------------------------------
+
+
+[INFO]:   Using finite-differences of energies to determine gradients.
+    Generating geometries for use with 3-point formula.
+    Displacement size will be 5.00e-03.
+
+[INFO]:     Number of atoms is 3.
+    Number of symmetric SALCs is 3.
+    Translations projected? 1. Rotations projected? 1.
+
+[INFO]:     Number of geometries (including reference) is 7.
+
+[INFO]: <<< JSON launch ... cs 26.9528992911221
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.9528992911221
+[INFO]: Return energy(): -138.0946088620222
+[INFO]: <<< JSON launch ... cs 26.94570129570782
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.94570129570782
+[INFO]: Return energy(): -138.09465068837298
+[INFO]: <<< JSON launch ... cs 26.96011469883138
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.96011469883138
+[INFO]: Return energy(): -138.094559728139
+[INFO]: <<< JSON launch ... cs 26.959636868236707
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.959636868236707
+[INFO]: Return energy(): -138.09457931537477
+[INFO]: <<< JSON launch ... cs 26.94616707636773
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.94616707636773
+[INFO]: Return energy(): -138.09463448941744
+[INFO]: <<< JSON launch ... cs 26.96859137554915
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.96859137554915
+[INFO]: Return energy(): -138.09457588809565
+[INFO]: <<< JSON launch ... cs 26.937231185467194
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.937231185467194
+[INFO]: Return energy(): -138.0946400773046
+[INFO]:   Computing gradient from energies.
+    Using 3-point formula.
+    Energy without displacement: -138.0946088620
+    Check energies below for precision!
+    Forces are for mass-weighted, symmetry-adapted cartesians [a0].
+
+[INFO]: 
+     Coord      Energy(-1)        Energy(+1)            Force
+        0   -138.0946506884   -138.0945597281      0.0090960234
+        1   -138.0945793154   -138.0946344894     -0.0055174043
+        2   -138.0945758881   -138.0946400773     -0.0064189209
+[INFO]: 
+         -------------------------------------------------------------
+
+[WARNING]: This method is currently implemented as a last resort used as a last
+                       resort. Should be safe assuming no dimer coordinates, otherwise unknown.
+[INFO]: 	Current Step Report 
+ 
+	Current energy:      -138.2459281805
+	Energy change for the previous step:
+		Actual       :        -0.0005616173
+		Projected    :        -0.0005611489
+
+[INFO]: 	Energy ratio =    1.00083
+[INFO]: 	Energy ratio indicates good step: Trust radius increased to 1.000e+00.
+
+[INFO]: 	Taking RFO optimization step.
+[INFO]: 	Using RFO solution 1.
+[INFO]: 	Determining step-restricting scale parameter for RS-RFO.
+[INFO]: 
+	Maximum step size allowed    1.00000
+[INFO]: 
+
+	 Iter      |step|        alpha        rfo_root
+	------------------------------------------------
+	     1     0.00500       1.00000           1
+
+[INFO]: 	Norm of target step-size:    0.0050021402
+
+[INFO]: 	Projected energy change by RFO approximation        -0.00000
+
+[INFO]: 	Determining Cartesian step for fragment 1.
+[INFO]: 
+
+	---------------------------------------------------
+	 Iter        RMS(dx)        Max(dx)        RMS(dq) 
+	---------------------------------------------------
+	    1        2.0e-03        3.7e-03        4.1e-06
+	    2        1.8e-06        3.1e-06        3.8e-12
+	    3        2.7e-12        5.4e-12        2.6e-16
+	---------------------------------------------------
+
+[INFO]: 	Successfully converged to displaced geometry.
+[INFO]: 	Step for fragment succeeded.
+[INFO]: 
+
+	       --- Internal Coordinate Step in ANG or DEG, aJ/ANG or AJ/DEG ---
+	-----------------------------------------------------------------------------
+	         Coordinate      Previous         Force          Change          New 
+	         ----------      --------        ------          ------        ------
+	                  0       1.08529       0.00162       0.00029       1.08559
+	                  1       1.31327       0.01509       0.00152       1.31479
+	                  2     121.89647       0.00005       0.23221     122.12868
+	-----------------------------------------------------------------------------
+
+[INFO]: 	Norm of achieved step-size    0.0050021402
+[INFO]: 	Performing BFGS update.
+[INFO]: 	Using 1 previous steps for update.
+[INFO]: 	Steps to be used in Hessian update:  1
+
+[INFO]: Performing convergence check.
+[INFO]: 
+	==> Convergence Check <==
+        
+	Measures of convergence in internal coordinates in au.
+        
+	Criteria marked as inactive (o), active & met (*), and active & unmet ( ).
+        
+	---------------------------------------------------------------------------------------------
+	  Step     Total Energy     Delta E     MAX Force     RMS Force      MAX Disp      RMS Disp   
+	---------------------------------------------------------------------------------------------
+	  Convergence Criteria              o    2.00e-06 *    1.00e-06 *    6.00e-06 *    4.00e-06 *
+	---------------------------------------------------------------------------------------------
+	     2    -138.24592818   -5.62e-04 o    1.83e-03      1.13e-03      4.05e-03      2.89e-03    ~
+	---------------------------------------------------------------------------------------------
+
+
+[INFO]: PLANNING FD:  dermode=(1, 0) keywords={'DERTYPE': 'NONE', 'FREEZE_CORE': 'TRUE', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}, 'SCF__E_CONVERGENCE': 1e-10, 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08} findif_kw={'findif_stencil_size': 3, 'findif_step_size': 0.005, 'findif_verbose': 1} kw={}
+[INFO]: 
+         ----------------------------------------------------------
+                                   FINDIF
+                     R. A. King and Jonathon Misiewicz
+         ----------------------------------------------------------
+
+
+[INFO]:   Using finite-differences of energies to determine gradients.
+    Generating geometries for use with 3-point formula.
+    Displacement size will be 5.00e-03.
+
+[INFO]:     Number of atoms is 3.
+    Number of symmetric SALCs is 3.
+    Translations projected? 1. Rotations projected? 1.
+
+[INFO]:     Number of geometries (including reference) is 7.
+
+[INFO]: <<< JSON launch ... cs 26.92263530842012
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.92263530842012
+[INFO]: Return energy(): -138.09730465274825
+[INFO]: <<< JSON launch ... cs 26.915454445967665
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.915454445967665
+[INFO]: Return energy(): -138.09756706288243
+[INFO]: <<< JSON launch ... cs 26.92983345879902
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.92983345879902
+[INFO]: Return energy(): -138.09703459831223
+[INFO]: <<< JSON launch ... cs 26.929373994272318
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.929373994272318
+[INFO]: Return energy(): -138.09741078090744
+[INFO]: <<< JSON launch ... cs 26.915902060408687
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.915902060408687
+[INFO]: Return energy(): -138.09719524577258
+[INFO]: <<< JSON launch ... cs 26.93828383220915
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.93828383220915
+[INFO]: Return energy(): -138.09728234648216
+[INFO]: <<< JSON launch ... cs 26.90701068959943
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.90701068959943
+[INFO]: Return energy(): -138.09732542989494
+[INFO]:   Computing gradient from energies.
+    Using 3-point formula.
+    Energy without displacement: -138.0973046527
+    Check energies below for precision!
+    Forces are for mass-weighted, symmetry-adapted cartesians [a0].
+
+[INFO]: 
+     Coord      Energy(-1)        Energy(+1)            Force
+        0   -138.0975670629   -138.0970345983      0.0532464570
+        1   -138.0974107809   -138.0971952458      0.0215535135
+        2   -138.0972823465   -138.0973254299     -0.0043083413
+[INFO]: 
+         -------------------------------------------------------------
+
+[INFO]: PLANNING FD:  dermode=(1, 0) keywords={'DERTYPE': 'NONE', 'FREEZE_CORE': 'TRUE', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}, 'SCF__E_CONVERGENCE': 1e-10, 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08} findif_kw={'findif_stencil_size': 3, 'findif_step_size': 0.005, 'findif_verbose': 1} kw={}
+[INFO]: 
+         ----------------------------------------------------------
+                                   FINDIF
+                     R. A. King and Jonathon Misiewicz
+         ----------------------------------------------------------
+
+
+[INFO]:   Using finite-differences of energies to determine gradients.
+    Generating geometries for use with 3-point formula.
+    Displacement size will be 5.00e-03.
+
+[INFO]:     Number of atoms is 3.
+    Number of symmetric SALCs is 3.
+    Translations projected? 1. Rotations projected? 1.
+
+[INFO]:     Number of geometries (including reference) is 7.
+
+[INFO]: <<< JSON launch ... cs 26.92263530842012
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.92263530842012
+[INFO]: Return energy(): -138.09466682936736
+[INFO]: <<< JSON launch ... cs 26.915454445967665
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.915454445967665
+[INFO]: Return energy(): -138.09470876574764
+[INFO]: <<< JSON launch ... cs 26.92983345879902
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.92983345879902
+[INFO]: Return energy(): -138.0946176106516
+[INFO]: <<< JSON launch ... cs 26.929373994272318
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.929373994272318
+[INFO]: Return energy(): -138.09463969859414
+[INFO]: <<< JSON launch ... cs 26.915902060408687
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.915902060408687
+[INFO]: Return energy(): -138.09469003700866
+[INFO]: <<< JSON launch ... cs 26.93828383220915
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.93828383220915
+[INFO]: Return energy(): -138.0946361673725
+[INFO]: <<< JSON launch ... cs 26.90701068959943
+[INFO]: PLANNING Atomic:  keywords={'DERTYPE': 'NONE', 'SCF__D_CONVERGENCE': 1e-10, 'E_CONVERGENCE': 1e-08, 'SCF__E_CONVERGENCE': 1e-10, 'FREEZE_CORE': 'TRUE', 'PARENT_SYMMETRY': 'CS(Z)', 'REFERENCE': 'ROHF', 'ROOTS_PER_IRREP': [0, 1], 'function_kwargs': {}}
+[INFO]: Compute energy(): method=eom-ccsd, basis=aug-cc-pvdz, molecule=CFH, nre=26.90701068959943

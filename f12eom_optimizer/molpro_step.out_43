@@ -1,13 +1,13 @@
 
- Primary working directories    : /scratch/mdavis/molpro_step_2022-08-19_12_58_05/molpro.jjLQMgiifg
- Secondary working directories  : /scratch/mdavis/molpro_step_2022-08-19_12_58_05/molpro.jjLQMgiifg
+ Primary working directories    : /scratch/mdavis/molpro_step_2022-08-17_16_50_09/molpro.CU3DSHNamX
+ Secondary working directories  : /scratch/mdavis/molpro_step_2022-08-17_16_50_09/molpro.CU3DSHNamX
  Wavefunction directory         : /home/mdavis/f12eom_optimizer/f12eom_optimizer/./
- Main file repository           : /scratch/mdavis/molpro_step_2022-08-19_12_58_05/molpro.jjLQMgiifg/
+ Main file repository           : /scratch/mdavis/molpro_step_2022-08-17_16_50_09/molpro.CU3DSHNamX/
 
  id        : olemiss
 
  Nodes     nprocs
- node17       4
+ node2        4
 
  Using customized tuning parameters: mindgm=1; mindgv=20; mindgc=4; mindgr=1; noblas=0; minvec=7
  default implementation of scratch files=sf  
@@ -19,20 +19,20 @@
  gthresh,energy=1.d-12,zero=1.d-22,oneint=1.d-22,twoint=1.d-22;
  gthresh,optgrad=1.d-8,optstep=1.d-8;
  nocompress;
- ang;
+ bohr;
  geometry={
       3
  Fragment 1
-     H  -0.7632044750   1.4579219460   0.0000000000
-     C   0.0986243160   0.7533057638   0.0000000000
-     F  -0.0218078969  -0.5531517206   0.0000000000
+     H  -0.9675519511   1.0972411746   0.0000000000
+     C   0.1020124118   0.7634892810   0.0000000000
+     F  -0.0131077261  -0.5404506055   0.0000000000
       }
  
  set,charge=0
  set,spin=0
  basis=vdz-f12
  hf,maxit=500;wf,charge=0,spin=0;accu,20;
-                                                                    !ccsd(t)-f12,maxit=250;wf,charge=0,spin=0;orbital,IGNORE_ERROR;
+ ccsd(t)-f12,maxit=250;wf,charge=0,spin=0;orbital,IGNORE_ERROR;
  ee(1)=energy(2)
  forces,varsav
  SHOW[f18.12],ee(1)
@@ -40,7 +40,7 @@
  SHOW[f18.12],GRADY
  SHOW[f18.12],GRADZ
  Commands  initialized (802), CPU time= 0.01 sec, 659 directives.
- Default parameters read. Elapsed time= 0.20 sec
+ Default parameters read. Elapsed time= 0.14 sec
 
  Checking input...
  Passed
@@ -54,7 +54,7 @@
 
  **********************************************************************************************************************************
  LABEL *   part of geometry opt run                                                      
-  64 bit mpp version                                                                     DATE: 19-Aug-22          TIME: 12:58:17  
+  64 bit mpp version                                                                     DATE: 17-Aug-22          TIME: 16:50:16  
  **********************************************************************************************************************************
 
  SHA1:             8c27446f6450a7499e38f603e13c65f775101d37
@@ -109,7 +109,7 @@
  THRESH   =    0.000000
  IO       =  eaf                                                                                                                             
  SPRI     =    0.000000
- ZUNIT=ANG
+ ZUNIT=BOHR
 
 
  Geometry recognized as XYZ
@@ -147,18 +147,18 @@
 
  NR  ATOM    CHARGE       X              Y              Z
 
-   1  H       1.00   -1.442247435    2.755073189    0.000000000
-   2  C       6.00    0.186372946    1.423541582    0.000000000
-   3  F       9.00   -0.041210952   -1.045305257    0.000000000
+   1  H       1.00   -0.967551951    1.097241175    0.000000000
+   2  C       6.00    0.102012412    0.763489281    0.000000000
+   3  F       9.00   -0.013107726   -0.540450606    0.000000000
 
  Bond lengths in Bohr (Angstrom)
 
- 1-2  2.103658900  2-3  2.479314249
-     ( 1.113208349)     ( 1.311996599)
+ 1-2  1.120427710  1-3  1.895520547  2-3  1.309011793
+     ( 0.592904811)     ( 1.003066276)     ( 0.692699210)
 
  Bond angles
 
-  1-2-3  124.00206330
+  1-2-3  102.28490012   1-3-2   35.27892155   2-1-3   42.43617833
 
  NUCLEAR CHARGE:                   16
  NUMBER OF PRIMITIVE AOS:          93
@@ -169,12 +169,12 @@
  NUMBER OF VALENCE ORBITALS:        9   (    7A'  +    2A"  )
 
 
- NUCLEAR REPULSION ENERGY   26.85438957
+ NUCLEAR REPULSION ENERGY   51.35562708
 
  Eigenvalues of metric
 
-         1 0.169E-02 0.309E-02 0.327E-02 0.344E-02 0.360E-02 0.468E-02 0.470E-02 0.905E-02
-         2 0.330E-02 0.468E-02 0.806E-01 0.944E-01 0.137E+00 0.164E+00 0.250E+00 0.384E+00
+         1 0.304E-03 0.618E-03 0.813E-03 0.126E-02 0.198E-02 0.239E-02 0.336E-02 0.451E-02
+         2 0.303E-02 0.465E-02 0.129E-01 0.239E-01 0.514E-01 0.750E-01 0.151E+00 0.196E+00
 
 
  Contracted 2-electron integrals neglected if value below      1.0D-22
@@ -191,8 +191,8 @@
 
  Memory used in sort:       0.94 MW
 
- SORT1 READ     1426049. AND WROTE      362597. INTEGRALS IN      2 RECORDS. CPU TIME:     0.03 SEC, REAL TIME:     0.05 SEC
- SORT2 READ     1455925. AND WROTE     1544830. INTEGRALS IN      4 RECORDS. CPU TIME:     0.01 SEC, REAL TIME:     0.02 SEC
+ SORT1 READ     1426049. AND WROTE      362597. INTEGRALS IN      2 RECORDS. CPU TIME:     0.01 SEC, REAL TIME:     0.04 SEC
+ SORT2 READ     1455925. AND WROTE     1544830. INTEGRALS IN      4 RECORDS. CPU TIME:     0.02 SEC, REAL TIME:     0.02 SEC
 
  Node minimum:      384138.  Node maximum:      388531. integrals
 
@@ -207,8 +207,8 @@
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
 
  PROGRAMS   *        TOTAL       INT
- CPU TIMES  *         0.98      0.80
- REAL TIME  *         3.39 SEC
+ CPU TIMES  *         1.11      0.95
+ REAL TIME  *         3.03 SEC
  DISK USED  *        30.40 MB (local),      167.46 MB (total)
  SF USED    *        22.74 MB
  GA USED    *         0.00 MB       (max)       0.00 MB       (current)
@@ -234,47 +234,53 @@
  Initial occupancy:   7   1
 
  ITERATION    DDIFF          GRAD             ENERGY        2-EL.EN.            DIPOLE MOMENTS         DIIS   ORB.
-    1      0.000D+00      0.000D+00      -137.75782297    156.464991   -0.85346    0.17222    0.00000    0    start
-    2      0.000D+00      0.105D-01      -137.78546231    157.493669   -0.73682    0.12700    0.00000    1    diag
-    3      0.147D-01      0.393D-02      -137.78886103    157.806870   -0.71900    0.23495    0.00000    2    diag
-    4      0.435D-02      0.128D-02      -137.78925586    157.585631   -0.71462    0.22625    0.00000    3    diag
-    5      0.123D-02      0.335D-03      -137.78932522    157.652281   -0.71290    0.23700    0.00000    4    diag
-    6      0.515D-03      0.923D-04      -137.78933346    157.651229   -0.71193    0.23895    0.00000    5    diag
-    7      0.207D-03      0.282D-04      -137.78933419    157.651570   -0.71190    0.23901    0.00000    6    diag
-    8      0.704D-04      0.551D-05      -137.78933421    157.651335   -0.71186    0.23893    0.00000    7    diag
-    9      0.120D-04      0.104D-05      -137.78933421    157.651364   -0.71187    0.23890    0.00000    8    diag
-   10      0.251D-05      0.209D-06      -137.78933421    157.651365   -0.71187    0.23890    0.00000    9    orth
-   11      0.580D-06      0.420D-07      -137.78933421    157.651365   -0.71187    0.23890    0.00000    9    diag
-   12      0.116D-06      0.769D-08      -137.78933421    157.651365   -0.71187    0.23890    0.00000    9    diag
-   13      0.191D-07      0.210D-08      -137.78933421    157.651365   -0.71187    0.23890    0.00000    9    diag
-   14      0.570D-08      0.780D-09      -137.78933421    157.651365   -0.71187    0.23890    0.00000    9    diag
-   15      0.258D-08      0.226D-09      -137.78933421    157.651365   -0.71187    0.23890    0.00000    9    diag
-   16      0.469D-09      0.762D-10      -137.78933421    157.651365   -0.71187    0.23890    0.00000    9    diag
-   17      0.168D-09      0.138D-10      -137.78933421    157.651365   -0.71187    0.23890    0.00000    9    diag
-   18      0.322D-10      0.317D-11      -137.78933421    157.651365   -0.71187    0.23890    0.00000    0    orth
+    1      0.000D+00      0.000D+00      -135.45625526    197.541894   -0.94609   -1.38382    0.00000    0    start
+    2      0.000D+00      0.171D-01      -135.50409621    192.810053   -1.16586   -1.34122    0.00000    1    diag
+    3      0.473D-01      0.540D-02      -135.50969189    194.254776   -1.17711   -1.30095    0.00000    2    diag
+    4      0.995D-02      0.117D-02      -135.51068263    193.875931   -1.22210   -1.30222    0.00000    3    diag
+    5      0.808D-02      0.453D-03      -135.51097493    193.861124   -1.23676   -1.28829    0.00000    4    diag
+    6      0.332D-02      0.250D-03      -135.51115394    193.810414   -1.24679   -1.27358    0.00000    5    diag
+    7      0.305D-02      0.109D-03      -135.51121348    193.774293   -1.24899   -1.25704    0.00000    6    diag
+    8      0.241D-02      0.312D-04      -135.51121804    193.770516   -1.24704   -1.25052    0.00000    7    diag
+    9      0.110D-02      0.681D-05      -135.51121818    193.769923   -1.24626   -1.24945    0.00000    8    diag
+   10      0.182D-03      0.179D-05      -135.51121818    193.770119   -1.24606   -1.24931    0.00000    9    orth
+   11      0.135D-04      0.682D-06      -135.51121818    193.770270   -1.24595   -1.24931    0.00000    9    diag
+   12      0.999D-05      0.244D-06      -135.51121818    193.770287   -1.24593   -1.24933    0.00000    9    diag
+   13      0.559D-05      0.676D-07      -135.51121818    193.770284   -1.24593   -1.24933    0.00000    9    diag
+   14      0.934D-06      0.215D-07      -135.51121818    193.770285   -1.24593   -1.24933    0.00000    9    diag
+   15      0.534D-06      0.595D-08      -135.51121818    193.770285   -1.24593   -1.24933    0.00000    9    diag
+   16      0.222D-06      0.134D-08      -135.51121818    193.770285   -1.24593   -1.24933    0.00000    9    diag
+   17      0.178D-07      0.446D-09      -135.51121818    193.770285   -1.24593   -1.24933    0.00000    9    diag
+   18      0.325D-08      0.119D-09      -135.51121818    193.770285   -1.24593   -1.24933    0.00000    9    diag
+   19      0.113D-08      0.370D-10      -135.51121818    193.770285   -1.24593   -1.24933    0.00000    9    fixocc
+   20      0.854D-09      0.128D-10      -135.51121818    193.770285   -1.24593   -1.24933    0.00000    9    orth
+   21      0.460D-09      0.301D-11      -135.51121818    193.770285   -1.24593   -1.24933    0.00000    9    diag
+   22      0.978D-10      0.433D-12      -135.51121818    193.770285   -1.24593   -1.24933    0.00000    9    diag
+   23      0.827D-11      0.134D-12      -135.51121818    193.770285   -1.24593   -1.24933    0.00000    9    diag
+   24      0.193D-11      0.699D-13      -135.51121818    193.770285   -1.24593   -1.24933    0.00000    0    orth
 
  Final occupancy:   7   1
 
- !RHF STATE  1.1 Energy              -137.789334214714
- Nuclear energy                        26.85438957
- One-electron energy                 -243.46940623
- Two-electron energy                   78.82568245
- Virial quotient                       -1.00121342
- !RHF STATE  1.1 Dipole moment         -0.71187435     0.23889911     0.00000000
- Dipole moment /Debye                  -1.80928562     0.60718119     0.00000000
+ !RHF STATE  1.1 Energy              -135.511218184063
+ Nuclear energy                        51.35562708
+ One-electron energy                 -283.75198758
+ Two-electron energy                   96.88514232
+ Virial quotient                       -0.92945149
+ !RHF STATE  1.1 Dipole moment         -1.24593286    -1.24933431     0.00000000
+ Dipole moment /Debye                  -3.16663804    -3.17528310     0.00000000
 
  Orbital energies:
 
          1.1          2.1          3.1          4.1          5.1          6.1          7.1          8.1          9.1
-    -26.367986   -11.368116    -1.683014    -0.924084    -0.766165    -0.701968    -0.379572     0.067599     0.080437
+    -26.552647   -11.426389    -2.258959    -1.364622    -1.160274    -0.794406    -0.213073     0.043384     0.076829
 
          1.2          2.2          3.2
-     -0.718115     0.041940     0.124612
+     -1.220481     0.069455     0.207375
 
 
- HOMO      7.1    -0.379572 =     -10.3287eV
- LUMO      2.2     0.041940 =       1.1412eV
- LUMO-HOMO         0.421512 =      11.4699eV
+ HOMO      7.1    -0.213073 =      -5.7980eV
+ LUMO      8.1     0.043384 =       1.1806eV
+ LUMO-HOMO         0.256458 =       6.9786eV
 
 
  **********************************************************************************************************************************
@@ -288,61 +294,70 @@
                                          GEOM     BASIS   MCVARS     RHF  
 
  PROGRAMS   *        TOTAL    HF-SCF       INT
- CPU TIMES  *         1.17      0.18      0.80
- REAL TIME  *         3.66 SEC
+ CPU TIMES  *         1.32      0.21      0.95
+ REAL TIME  *         3.36 SEC
  DISK USED  *        33.19 MB (local),      178.61 MB (total)
  SF USED    *        22.75 MB
  GA USED    *         0.00 MB       (max)       0.00 MB       (current)
  **********************************************************************************************************************************
- SETTING EE(1)          =    ENERGY(2)
 
 
- PROGRAM * ALASKA (Gradient of the energy)     Author: R. Lindh
+ PROGRAM * CCSD (Closed-shell coupled cluster)     Authors: C. Hampel, H.-J. Werner, 1991, M. Deegan, P.J. Knowles, 1992
 
- Orbitals from record         2100.2
+                                  CCSD-F12 implementation by  H.-J. Werner, 2007
 
- Number of closed-shell orbitals:  8 (  7  1 )
- Number of occupied orbitals:      8 (  7  1 )
-
- Number of electrons= 16     Singlet     Space symmetry=1      Wavefunction type: CLOSED          
+                   Density fitting integral evaluation by F.R. Manby, 2003,2007, G. Knizia, 2010
 
 
- SCF GRADIENT FOR STATE 1.1
+ Basis set AUG-CC-PVDZ/JKFIT generated.  Number of basis functions:   204 
+ Basis set CC-PVDZ-F12/OPTRI generated.  Number of basis functions:   154 
+ Basis set AUG-CC-PVDZ/MP2FIT generated. Number of basis functions:   167 
 
- Atom          dE/dx               dE/dy               dE/dz
+ Convergence thresholds:  THRVAR = 1.00D-16  THRDEN = 1.00D-12
 
-   1         0.022512125         0.042918547         0.000000000
-   2        -0.059076813        -0.000731848         0.000000000
-   3         0.036564687        -0.042186699         0.000000000
-
- Nuclear force contribution to virial =         0.116314660
+ CCSD(T)     terms to be evaluated (factor= 1.000)
 
 
- **********************************************************************************************************************************
- DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
-              1      18       52.84       500      610      700      900      950      970     1000      129      960     1100   
-                                          VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
-                                         1400     1410     1200     1210     1080     1600     1650     1700   
-                                           T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
+ Number of core orbitals:           2 (   2   0 )
+ Number of closed-shell orbitals:   6 (   5   1 )
+ Number of external orbitals:      61 (  42  19 )
 
-              2       4        2.84       700     1000      520     2100   
-                                         GEOM     BASIS   MCVARS     RHF  
+ Molecular orbitals read from record     2100.2  Type=RHF/CANONICAL (state 1.1)
 
- PROGRAMS   *        TOTAL    FORCES    HF-SCF       INT
- CPU TIMES  *         6.08      4.91      0.18      0.80
- REAL TIME  *        18.33 SEC
- DISK USED  *        33.19 MB (local),      178.61 MB (total)
- SF USED    *        22.75 MB
- GA USED    *         0.00 MB       (max)       0.00 MB       (current)
- **********************************************************************************************************************************
- EE(1)            =    ENERGY(2)
- GRADX(1:3)       = [      0.022512125220   -0.059076812537    0.036564687317] AU
- GRADY(1:3)       = [      0.042918546693   -0.000731847587   -0.042186699106] AU
- GRADZ(1:3)       = [      0.000000000000    0.000000000000    0.000000000000] AU
+ MP2-F12 correlation treatment (H.-J. Werner, 2006)
+ ==================================================
 
- HF/cc-pVDZ-F12 energy=   -137.789334214714
+ Using MP2-F12 with ansatz 3C(FIX)
 
-          HF-SCF
-   -137.78933421
- **********************************************************************************************************************************
- Molpro calculation terminated
+ Using projected zeroth-order Hamiltonian (+Z)
+
+ FOCKRIB=T FOCKRIC=T FOCKRIP=T CABSP=T CABSA=T CABSK=T CABSF=T GBC=F EBC=F DMAT=T NOFIK=T NOPAO=1 SOLVE=-1  USEPAO=0
+ EXCH_A= T EXCH_B= F EXCH_C= F EXCH_P= F
+
+ Geminal basis:    OPTFULL  GEM_TYPE=SLATER  BETA=1.0  NGEM=6
+
+ Optimizing Gaussian exponents for each gem_beta
+
+ Geminal optimization for beta= 1.0000
+ Weight function:   m=0, omega= 1.4646
+
+ Augmented Hessian optimization of geminal fit. Trust ratio= 0.40000
+ Convergence reached after   2 iterations. Final gradient= 8.66D-16, Step= 4.23D-06, Delta= 1.28D-09
+
+ Alpha:                 0.19532     0.81920     2.85917     9.50073    35.69989   197.79328
+ Coeff:                 0.27070     0.30552     0.18297     0.10986     0.06810     0.04224
+
+
+ Symmetry turned off. Reference energy:       -135.511218184064
+
+ All pairs explicitly correlated. Number of r12-pairs:           21
+
+ Excluding core orbitals from MO domains
+
+ AO(A)-basis ORBITAL           loaded. Number of functions:      69
+ RI(R)-basis CC-PVDZ-F12/OPTRI loaded. Number of functions:     154
+ DF-basis AUG-CC-PVDZ/JKFIT    loaded. Number of functions:     204
+
+ Screening thresholds:   THRAO=  1.00D-10  THRMO=  1.00D-10  THRPROD=  1.00D-10
+                         THRSW=  1.00D-07  THROV=  1.00D-12  THRAOF12= 1.00D-08
+

@@ -1,0 +1,30 @@
+export: Command not found.
+export: Command not found.
+export: Command not found.
+export: Command not found.
+Badly placed ()'s.
+ 
+Running threaded PSI4 on node17 
+/home/mdavis/anaconda3/envs/p4env/bin/psi4
+ 
+Working and scratch directories
+/home/mdavis/f12eom_optimizer/tests/slurm
+/scratch/mdavis/PSI4_2022-08-19_14:19:47.836645042
+ 
+use -n:  to specify number of threads
+use -i:  to specify input  file     (default = input.dat)
+use -o:  to specify output file     (default = file.out )
+ 
+-h or --help for more options
+ 
+Running...
+Traceback (most recent call last):
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 417, in <module>
+    main()
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 276, in main
+    optparams, molsys_obj = read_input(input_file)
+  File "/home/mdavis/f12eom_optimizer/f12eom_optimizer/f12eom_optimizer.py", line 89, in read_input
+    with open(_input, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'example_input.inp'
+...Done
+ 
