@@ -18,7 +18,7 @@ import numpy as np
 #TODO remove default values? Could lead to confusing bugs
 optparams = {
         'maxiter': 50,
-        'natoms': 3,
+        'natoms': 2,
         'charge': 0,
         'spin': 0,
         'psispin': 1,
@@ -32,18 +32,22 @@ optparams = {
         'xyz': '',
         'mol_core': '',
         'mol_basis': '',
-        'psi_basis': ''
+        'psi_basis': '',
+        'canonical': 'false'
         }
 input_file = 'opt.inp'
 
 maxiter = 50
-natoms = 3
+natoms = 2
 charge = 0
 spin = 0
 memory = 8
 nproc = 4
 mem = memory*1000/nproc
 roots = [0, 1]
+#molpro_executable = "/home/qc/bin/molpro2020.sh"
+#TODO get molpro working on maple
+molpro_executable = "molpro"
 
 initial_geom="""
   H      0.000000000    1.442306288   -2.754574215
@@ -116,6 +120,11 @@ def read_input(_input):
     #actually yeah do that in this function
 
     #converts geometry to right unit I know this is dumb
+    print("""
+    {charge} {psispin}
+    {xyz}
+    units {units}
+         """.format_map(optparams))
     mol = psi4.geometry("""
     {charge} {psispin}
     {xyz}
@@ -124,7 +133,9 @@ def read_input(_input):
     molsys_obj = molsys.Molsys.from_psi4_molecule(mol)
     optparams['xyz'] = molsys_obj.show_geom()
 
-    if optparams['freeze_core'] == 'true':
+    if optparams['theory'] == 'mt':
+        optparams['psi_theory'] = 'mt'
+    elif optparams['freeze_core'] == 'true':
         optparams['mol_basis'] = 'v{theory}-f12'.format_map(optparams)
         optparams['psi_theory'] = 'aug-cc-pv{theory}'.format_map(optparams)
     elif optparams['freeze_core'] == 'false':
@@ -200,6 +211,9 @@ def real_run_psi4(_molsys_obj, _optparams):
     #formats this for a psi4 geomtetry
 
     mol = psi4.geometry(_molsys_obj.show_geom().replace("\tFragment 1\n\t", "") + f"\nunits ang")
+
+    mol.set_molecular_charge(int(_optparams['charge']))
+    mol.set_multiplicity(int(_optparams['psispin']))
     
 
     
@@ -225,8 +239,58 @@ def real_run_psi4(_molsys_obj, _optparams):
     #
     eom_gradient = eom_gradient.np.flatten()
     #E = wfn.variables()['CURRENT ENERGY']
+
     gradient = np.subtract(eom_gradient, ccsd_gradient)
     E = wfn.variables()['CURRENT ENERGY'] - wfn.variables()['CCSD TOTAL ENERGY']
+
+#    gradient = psi4.gradient('scf').np.flatten()
+#    E = psi4.energy('scf')
+#    E = psi4.energy('eom-ccsd')
+    print("Here is the gradient")
+    print(gradient)
+    return gradient, E
+
+def run_psi4_canonical(_molsys_obj, _optparams):
+    """
+    Runs CCSD(T) in Psi4
+    """
+    psi4.set_memory('{mem} MB'.format_map(_optparams))
+    #might need to fix this
+    psi4.core.set_num_threads(int(_optparams['nproc']))
+    #formats this for a psi4 geomtetry
+
+    mol = psi4.geometry(_molsys_obj.show_geom().replace("\tFragment 1\n\t", "") + f"\nunits ang")
+    
+    mol.set_molecular_charge(int(_optparams['charge']))
+    mol.set_multiplicity(int(_optparams['psispin']))
+
+    
+    #compute energy and gradient
+    psi4.set_options({'reference': 'rohf', 
+        'max_force_g_convergence': '1.0e-8', 
+        'max_energy_g_convergence': '1.0e-12',
+        'max_disp_g_convergence': '1.0e-8',
+        'basis': _optparams['psi_theory'],
+        'freeze_core': _optparams['freeze_core'],
+        'cachelevel': '0',
+        'maxiter': '500',
+        'dertype': 'none',
+        'ints_tolerance': '20',
+        'roots_per_irrep': _optparams['roots'],
+        'scf__d_convergence': '13',
+        'ccenergy__r_convergence': '15',
+        'cceom__r_convergence': '8'
+        })
+    gradient = psi4.gradient('ccsd(t)', dertype='energy').np.flatten()
+    E = psi4.energy('ccsd(t)')
+    ##    gradient,wfn = psi4.gradient('eom-ccsd', dertype='energy', return_wfn='true').np.flatten()
+#    eom_gradient,wfn = psi4.gradient('eom-ccsd', dertype='energy', return_wfn='true')
+    #
+#    eom_gradient = eom_gradient.np.flatten()
+    #E = wfn.variables()['CURRENT ENERGY']
+
+ #   gradient = np.subtract(eom_gradient, ccsd_gradient)
+#    E = wfn.variables()['CURRENT ENERGY'] - wfn.variables()['CCSD TOTAL ENERGY']
 
 #    gradient = psi4.gradient('scf').np.flatten()
 #    E = psi4.energy('scf')
@@ -239,7 +303,7 @@ def run_molpro_v2(_molpro_input, _molpro_keys):
     """Runs molpro with a given input. Will make this function run without writing files"""
     with open('molpro_step.inp', 'w') as molpro_file:
         molpro_file.write(_molpro_input.format_map(_molpro_keys))
-    subprocess.Popen(["/home/qc/bin/molpro2020.sh", "1", 
+    subprocess.Popen([molpro_executable, "1", 
         "{nproc}".format_map(_molpro_keys), "molpro_step.inp"]).wait()
 
 
@@ -250,7 +314,7 @@ def run_molpro(_molpro_input):
     with open('molpro_step.inp', 'w') as molpro_file:
         molpro_file.write(_molpro_input.format_map(globals()))
     #TODO let this run parallel with psi4 job? Or remove reliance on the tsch script
-    subprocess.Popen(["/home/qc/bin/molpro2020.sh", f"{nproc}", "1", "molpro_step.inp"]).wait()
+    subprocess.Popen([molpro_executable, f"{nproc}", "1", "molpro_step.inp"]).wait()
 
 def read_molpro():
     """parses molpro output for gradients and energy"""
@@ -297,11 +361,16 @@ def main():
 
         psi_gradient, psi_energy = real_run_psi4(molsys_obj, optparams)
 
-        run_molpro_v2(molpro_input, optparams)
-        mol_gradient, mol_energy = read_molpro()
+        if optparams['canonical'] == 'true':
+            canon_gradient, canon_energy = run_psi4_canonical(molsys_obj, optparams)
+            gradient = np.add(psi_gradient,canon_gradient)
+            E = psi_energy + canon_energy
+        else:
+            run_molpro_v2(molpro_input, optparams)
+            mol_gradient, mol_energy = read_molpro()
 
-        gradient = np.add(psi_gradient,mol_gradient)
-        E = mol_energy + psi_energy
+            gradient = np.add(psi_gradient,mol_gradient)
+            E = mol_energy + psi_energy
 
         energies.append(E)
 
