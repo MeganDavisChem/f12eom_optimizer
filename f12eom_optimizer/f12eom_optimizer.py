@@ -7,6 +7,7 @@ from optking import molsys, stepAlgorithms, hessian, displace, intcosMisc, histo
 from optking import optparams as op
 import subprocess
 import numpy as np
+import os
 
 
 #TODO may have to feed in a Zmat to molpro. <-- can do this for efficiency but i'd rather not
@@ -33,7 +34,15 @@ optparams = {
         'mol_core': '',
         'mol_basis': '',
         'psi_basis': '',
-        'canonical': 'false'
+        'canonical': 'false',
+        'IP': 'false',
+        'cfour_states': '0/0/1/0',
+        'cfour_core': 'ON',
+        'cfour_basis': '',
+        'cfour_grad': '',
+        'cfour_ref': 'RHF',
+        'cfour_excite': 'EOMIP',
+        'cfouryz': ''
         }
 input_file = 'opt.inp'
 
@@ -45,9 +54,9 @@ memory = 8
 nproc = 4
 mem = memory*1000/nproc
 roots = [0, 1]
-#molpro_executable = "/home/qc/bin/molpro2020.sh"
+molpro_executable = "/home/qc/bin/molpro2020.sh"
 #TODO get molpro working on maple
-molpro_executable = "molpro"
+#molpro_executable = "molpro"
 
 initial_geom="""
   H      0.000000000    1.442306288   -2.754574215
@@ -84,6 +93,74 @@ SHOW[f18.12],GRADX
 SHOW[f18.12],GRADY
 SHOW[f18.12],GRADZ
 """
+
+molpro_input_canonical = """*** part of geometry opt run
+memory, {mem}, m;
+gthresh,energy=1.d-12,zero=1.d-22,oneint=1.d-22,twoint=1.d-22;
+gthresh,optgrad=1.d-8,optstep=1.d-8;
+nocompress;
+ang;
+geometry={{
+     {natoms}
+     {xyz}
+     }}
+
+set,charge={charge}
+set,spin={spin}
+basis={mol_basis}
+hf,maxit=500;accu,20;
+ccsd(t),maxit=250;{mol_core}orbital,IGNORE_ERROR;
+ee(1)=energy(1)
+forces,varsav
+SHOW[f18.12],ee(1)
+SHOW[f18.12],GRADX
+SHOW[f18.12],GRADY
+SHOW[f18.12],GRADZ
+"""
+
+cfour_ccsd_input = """%GRD={cfour_grad}
+CO AUG-PVTZ CCSD
+{cfouryz}
+
+
+
+*CFOUR(CALC=CCSD,BASIS={cfour_basis},COORDINATES=CARTESIAN,UNITS=ANGSTROM
+CC_CONV=10
+LINEQ_CONV=12
+SCF_CONV=10
+ESTATE_CONV=8
+REFERENCE={cfour_ref}
+CHARGE={charge}
+MULTIPLICITY={psispin}
+FROZEN_CORE={cfour_core}
+VIB=FINDIF
+FD_CALCTYPE=GRADONLY
+MEM_UNIT=GB,MEMORY_SIZE={memory})
+"""
+
+cfour_eomip_input = """%GRD={cfour_grad}
+CO AUG-PVTZ CCSD
+{cfouryz}
+
+
+
+*CFOUR(CALC=CCSD,BASIS={cfour_basis},COORDINATES=CARTESIAN,UNITS=ANGSTROM
+CC_CONV=10
+LINEQ_CONV=12
+SCF_CONV=10
+ESTATE_CONV=8
+REFERENCE={cfour_ref}
+CHARGE={charge}
+MULTIPLICITY={psispin}
+FROZEN_CORE={cfour_core}
+VIB=FINDIF
+FD_CALCTYPE=GRADONLY
+EXCITE={cfour_excite}
+ESTATE_SYM={cfour_states}
+MEM_UNIT=GB,MEMORY_SIZE={memory})
+"""
+
+
 
 def read_input(_input):
     def strip_line(_line):
@@ -133,15 +210,26 @@ def read_input(_input):
     molsys_obj = molsys.Molsys.from_psi4_molecule(mol)
     optparams['xyz'] = molsys_obj.show_geom()
 
+    #TODO this program needs to be rewritten lol
     if optparams['theory'] == 'mt':
         optparams['psi_theory'] = 'mt'
     elif optparams['freeze_core'] == 'true':
-        optparams['mol_basis'] = 'v{theory}-f12'.format_map(optparams)
+        if optparams['canonical'] == 'true':
+            optparams['mol_basis'] = 'aug-cc-pv{theory}'.format_map(optparams)
+        else:
+            optparams['mol_basis'] = 'v{theory}-f12'.format_map(optparams)
+        optparams['cfour_basis'] = 'aug-pv{theory}'.format_map(optparams)
         optparams['psi_theory'] = 'aug-cc-pv{theory}'.format_map(optparams)
     elif optparams['freeze_core'] == 'false':
-        optparams['mol_basis'] = 'cc-pcv{theory}-f12'.format_map(optparams)
+        if optparams['canonical'] == 'true':
+            optparams['mol_basis'] = 'aug-cc-pcv{theory}'.format_map(optparams)
+        else:
+            optparams['mol_basis'] = 'cc-pcv{theory}-f12'.format_map(optparams)
         optparams['mol_core'] = 'core;'
+        optparams['cfour_core'] = 'OFF'
+        optparams['cfour_basis'] = 'aug-pcv{theory}'.format_map(optparams)
         optparams['psi_theory'] = 'aug-cc-pcv{theory}'.format_map(optparams)
+    optparams['cfour_basis'] = optparams['cfour_basis'].upper()
 
     return optparams, molsys_obj
                 
@@ -306,6 +394,153 @@ def run_molpro_v2(_molpro_input, _molpro_keys):
     subprocess.Popen([molpro_executable, "1", 
         "{nproc}".format_map(_molpro_keys), "molpro_step.inp"]).wait()
 
+def run_cfour(_cfour_ccsd_input, _cfour_eomip_input, _count):
+    """This will run cfour, similar to the molpro command"""
+    #run cfour for CCSD gradient
+    cwd = os.getcwd()
+    ccsd_dir = f'CCSD_{_count}'
+    optparams['cfour_grad'] = cwd + '/' + ccsd_dir + '/' + 'GRD'
+    os.mkdir(ccsd_dir)
+    os.chdir(ccsd_dir)
+    cfourgeom = optparams['xyz'].split('\n')[1:]
+
+    for i in range(len(cfourgeom)):
+        cfourgeom[i] = cfourgeom[i].strip('\t').split()
+        cfourgeom[i].append('\n')
+        print(cfourgeom[i])
+        cfourgeom[i] = " ".join(cfourgeom[i])
+
+    cfourgeom = "".join(cfourgeom)
+
+
+
+    optparams['cfouryz'] = cfourgeom
+
+#    optparams['cfouryz'] = optparams['xyz']
+
+    with open('ZMAT', 'w') as ZMAT:
+        ZMAT.write(_cfour_ccsd_input.format_map(optparams))
+    subprocess.Popen(['/home/qc/bin/c4_new.sh', '1']).wait()
+    #run cfour for EOMIP gradient
+    #make directory
+    os.chdir(cwd)
+    eomip_dir = f'EOMIP_{_count}'
+    optparams['cfour_grad'] = cwd + '/' + eomip_dir + '/' + 'GRD'
+    os.mkdir(eomip_dir)
+    os.chdir(eomip_dir)
+    with open('ZMAT', 'w') as ZMAT:
+        ZMAT.write(_cfour_eomip_input.format_map(optparams))
+    subprocess.Popen(['/home/qc/bin/c4_new.sh', '1']).wait()
+    os.chdir(cwd)
+
+
+    #format input file
+
+    #run cfour
+    pass
+
+def read_cfour(_count):
+    """This will parse the cfour output for a gradient and put it into the proper format which I'm sure will be a nightmare"""
+    cwd = os.getcwd()
+    ccsd_dir = f'CCSD_{_count}'
+    os.chdir(ccsd_dir)
+
+    with open('GRD') as GRD:
+        grdlines_ccsd = GRD.readlines()
+        #parse from here into right format
+
+    with open('output.dat') as output:
+        ccsd_output = output.readlines()
+
+    os.chdir(cwd)
+    eomip_dir = f'EOMIP_{_count}'
+    os.chdir(eomip_dir)
+    with open('GRD') as GRD:
+        grdlines_eomip = GRD.readlines()
+    with open('output.dat') as output:
+        eomip_output = output.readlines()
+
+    os.chdir(cwd)
+
+    na = int(optparams['natoms'])
+    grdlines_ccsd = grdlines_ccsd[na+1:]
+    grdlines_eomip = grdlines_eomip[na+1:]
+
+    grd_ccsd = []
+    for line in grdlines_ccsd:
+        grd = line.strip('\n').split()[1:]
+        for g in grd:
+            grd_ccsd.append(float(g))
+
+    grd_eomip = []
+    for line in grdlines_eomip:
+        grd = line.strip('\n').split()[1:]
+        for g in grd:
+            grd_eomip.append(float(g))
+
+    grd_fin = np.empty(na*3)
+
+    print('printing this stupid stuff')
+    print(grd_eomip)
+    print(grd_ccsd)
+    for i,grd in enumerate(grd_eomip):
+        grd_comb = grd - grd_ccsd[i]
+        grd_fin[i] = grd_comb
+    print(grd_fin)
+
+
+
+
+
+#    grd_ccsd = [float(grd) for i,grd in enumerate(line.strip('\n').split()) if i > 1 for line in grdlines_ccsd]
+    
+#    grd_ccsd = []
+#    for line in grdlines_ccsd:
+#        grds = [float(grd) for i,grd in enumerate(line.strip('\n').split()) if i > 0] 
+#        for grd in grds:
+#            grd_ccsd.append(grd)
+#
+#    
+#    print("I am printing grd_ccsd")
+    #this is all fucking stupid
+ #   grd_eomip = [float(grd) for i,grd in enumerate(line.strip('\n').split()) if i > 1 for line in grdlines_eomip]
+#    grd_eomip = [float(grd) for grd in line.strip('\n').split() for line in grdlines_eomip]
+#    grd_eomip = []
+#    for line in grdlines_eomip:
+#        grds = [float(grd) for i,grd in enumerate(line.strip('\n').split()) if i > 0] 
+#        for grd in grds:
+#            grd_eomip.append(grd)
+#
+#    grd_fin = np.empty(na*3)
+#
+#    for i,grd in enumerate(grd_eomip):
+#        grd_comb = grd - grd_ccsd[i]
+#        grd_fin[i] = grd_comb
+    
+#    print(grd_fin)
+#    print(grdlines_eomip)
+
+    _gradient = grd_fin
+
+
+    for line in eomip_output:
+        if "Total EOMIP-CCSD electronic energy" in line:
+            _energy = float(line.split()[-2])
+
+    #parse for CCSD energy
+
+    #parse for CCSD gradient
+
+    #parse for EOMIP energy
+
+    #parse for EOMIP gradient
+
+    #form pure EOM-IP gradient
+
+
+
+    return _gradient, _energy
+
 
 def run_molpro(_molpro_input):
     """Runs molpro with input given above (i.e. a CCSD(T)-F12b/v(d,t)z-f12 calculation).
@@ -359,18 +594,27 @@ def main():
     for i in range(int(maxiter)):
         print("iteration: " + str(i))
 
-        psi_gradient, psi_energy = real_run_psi4(molsys_obj, optparams)
+        if optparams['IP'] == 'true':
+            run_cfour(cfour_ccsd_input, cfour_eomip_input, i)
+            xs_gradient, xs_energy = read_cfour(i)
+        else:
+            xs_gradient, xs_energy = real_run_psi4(molsys_obj, optparams)
+
 
         if optparams['canonical'] == 'true':
-            canon_gradient, canon_energy = run_psi4_canonical(molsys_obj, optparams)
-            gradient = np.add(psi_gradient,canon_gradient)
-            E = psi_energy + canon_energy
+        #    canon_gradient, canon_energy = run_psi4_canonical(molsys_obj, optparams)
+            run_molpro_v2(molpro_input_canonical, optparams)
+            mol_gradient, mol_energy = read_molpro()
+            gradient = np.add(xs_gradient,mol_gradient)
+            E = mol_energy + xs_energy
+            #gradient = np.add(psi_gradient,canon_gradient)
+            #E = psi_energy + canon_energy
         else:
             run_molpro_v2(molpro_input, optparams)
             mol_gradient, mol_energy = read_molpro()
 
-            gradient = np.add(psi_gradient,mol_gradient)
-            E = mol_energy + psi_energy
+            gradient = np.add(xs_gradient,mol_gradient)
+            E = mol_energy + xs_energy
 
         energies.append(E)
 
